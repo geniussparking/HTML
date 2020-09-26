@@ -1,0 +1,811 @@
+知识点总结：
+
+学前准备：软件：Notepad++  安装完后设置：
+1. 设置--首选项--自动完成--单词自动完成
+2. 设置--首选项--语言格式设置--字体12号。
+
+完整的网页结构：
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" /> <!--这里是设置文字编码格式，在“格式”里面选择：utf-8无BOM格式后，在这里设置成utf-8-->
+<title>页面标题</title>  <!--Title和meta标签在head里面-->
+</head>
+<body>
+<div>我的第一个小网页</div>
+<div>我的第一个小网页</div>
+<div>我的第一个小网页</div><!--这是一句话我写的div标签-->
+<a href="http://www.sifangku.com" title="我的老师的网站" target="_blank"> 网站 </a> <!--所有标签的属性要加双引号哦！！！-->
+<span>我是span元素</span><span>我是span元素</span><span>我是span元素</span>
+<!--我是一句话！-->
+</body>
+</html>  <!--一个html的格式为：文本定义--html-head(meta,title)-body-->
+
+在代码界面如何空格，显示在页面内：
+<!--&nbsp是一个特殊符号，相当于空格的意思，在全角的状态下，在代码页面直接敲空格也能实现同样的空格效果。-->
+
+定义解释说明性内容：
+<dl>
+	<dt>苹果</dt>
+	<dd>
+		苹果是种低热量食物，每 100 克只产生 60 千卡热量；苹果中营养成份可溶性
+		大，易被人体吸收，故有“活水”之称，有利于溶解硫元素，使皮肤润滑柔嫩。
+	</dd>
+	<dt>鸭梨</dt>
+	<dd>鸭梨也是一种水果.....</dd>
+	<dt>橙子</dt>
+	<dd>橙子.........</dd>
+</dl>
+
+
+引用一张图片，并在图片不同位置点击，跳转到不同页面：
+<img src="images/1.jpg" alt="一对猫咪" usemap="#img1" />
+	<map id="img1" name="img1"><!--用id和name属性两个定义，以使任何一种浏览器都能兼容-->
+		<area shape="rect" coords="184,33,391,258" href="http://www.baidu.com" alt="百度一下" target="_blank" />
+		<area shape="rect" coords="76,62,150,150" href="http://www.sifangku.com" alt="网站我的博客" target="_blank" />
+		<area shape="circle" coords="507,287,20" href="http://www.sifangku.com" alt="网站我的博客" target="_blank" />
+	</map>
+
+表格：
+<table border="1" cellpadding="50" cellspacing="50">
+	<tr>
+		<th>姓名</th>
+		<th>年龄</th>
+		<th>学科</th>
+		<th>成绩</th>
+	</tr><!--第一行用th定义表头单元格，可以加粗首行-->
+	<tr>
+		<td>小孙</td>
+		<td>90</td>
+		<td>语文</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<td>英文</td>
+		<td>80</td>
+		<td>语文</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<td>英文</td>
+		<td>80</td>
+		<td>语文</td>
+		<td>70</td>
+	</tr>
+</table>
+
+表单：
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>表单</title>
+</head>
+<body>
+<h1>会员注册</h1>
+<form action="http://www.baidu.com" name="form1" target="_blank" method="post">
+姓名：<input type="text" value="小王" size="100" /><br />
+密码：<input type="password" disabled="disabled" size="100" /><br />
+头像：<input type="file" /><br />
+<input type="hidden" />
+<input type="button" value="点我" /><br />
+性别：<input type="radio" id="boy" name="sex" checked="checked" /><label for="boy">男</label>　　　<input name="sex" id="girl" type="radio" /><label for="girl">女</label>
+<br />
+您的爱好：
+<input type="checkbox" />篮球
+<input type="checkbox" checked="checked" />羽毛球
+<input type="checkbox" disabled="disabled"/>乒乓球
+<br />
+自我介绍：<textarea cols="20" rows="12">我是一名学生</textarea>
+<br /><br />
+<select name="city">
+	<optgroup label="江苏">
+		<option value="无锡">无锡</option>
+		<option value="盐城">盐城</option>
+		<option value="南京">南京</option>
+		<option value="苏州">苏州</option>
+	</optgroup>
+	<optgroup label="山东" disabled="disabled">
+		<option value="青岛">青岛</option>
+		<option value="淄博" selected="selected">淄博</option>
+	</optgroup>
+</select>
+<br /><br /><br /><br />
+<input type="submit" value="确认提交" style="cursor:pointer" />    { cursor:pointer;   }  将“确认提交”按钮加一个hover效果，鼠标指针变成手指。
+<input type="reset" />
+</form>
+</body>
+</html>
+
+为html 文档加上使用的语言类型说明：
+在很多国际化的网站中会使用到！
+<html lang="zh-CN">
+</html>
+告诉浏览器等设备，语言使用以中文为显示和阅读基础!
+英文使用en
+
+用html 标签来实现网页跳转
+<meta http-equiv="refresh" content="等待秒数;URL=跳转url 地址" />
+
+告诉浏览器不要加载页面的缓存（即获取网站的最新内容）
+<meta http-equiv="pragma" content="no-cache" />
+
+iframe 标签，框架
+创建包含另外一个文档的内联框架（即行内框架）
+
+<iframe src="http://www.baidu.com" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
+
+浏览器使用率统计：
+百度统计：http://tongji.baidu.com/data/browser
+站长网统计：http://brow.data.cnzz.com/
+开发中可能会用到的测试软件：
+1.火狐浏览器
+下载地址:http://www.firefox.com.cn/download/
+2.火狐的firebug 插件
+3.ietester
+下载地址:http://rj.baidu.com/soft/detail/14886.html
+
+
+引入css 文件:
+1)外部样式
+<link rel=”stylesheet” type=”text/css” href=”css 文件名” />  <!--rel是relationship的意思-->
+2)内页样式
+直接写在html 文件的头部里面
+<style type=”text/css”>
+p {
+	font-size:20px;
+	color:yellow;
+}
+</style>
+3)行内样式
+<p style=”color:red;”>私房货</p>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">  <!--中文显示-->
+<head>
+<meta charset="utf-8" /> <!--规定格式是utf-8-->
+<title>第四章 用CSS给网页装潢[2] -常用选择器</title>
+<style type="text/css"> <!--内部引入CSS格式-->
+body {
+	font-size:20px;
+	color:red;
+}
+
+/*
+#div1 {    <!--对id的声明-->
+	font-size:30px;
+}
+.red {     <!--对class的声明-->
+	color:red;
+}
+.size40 {
+	font-size:40px;
+}
+
+
+div {
+	color:red;
+}
+p {
+	font-size:30px;
+}
+
+
+p.red {
+	color:red;
+}
+
+div#div1 {   <!--对div下的class属性div的声明-->
+	
+}
+
+div,p,li.li1 {   <!--联合声明，并列-->
+	color:red;
+	font-size:30px;
+}
+
+div span {
+	color:red;
+}
+[title]     <!--为带有 title 属性的所有元素设置样式：-->
+{
+color:red;
+}
+实例:
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type="text"]
+{
+  width:150px;
+  Display:block;  <!--这里的block是指规定为块级元素-->
+  margin-bottom:10px;
+  background-color:yellow;
+  font-family: Verdana, Arial;
+}
+
+input[type="button"]
+{
+  width:120px;
+  margin-left:35px;
+  display:block;
+  font-family: Verdana, Arial;
+}
+</style>
+</head>
+<body>
+
+<form name="input" action="" method="get">
+<input type="text" name="Name" value="Bill" size="20">
+<input type="text" name="Name" value="Gates" size="20">
+<input type="button" value="Example Button">
+
+</form>
+</body>
+</html>
+
+
+
+a:hover {   <!--鼠标移过改变效果-->
+	color:red;
+	font-size:18px;
+}
+
+* {  <!--通用声明-->
+	font-size:60px;
+}
+*/
+</style>
+</head>
+<body>
+<div class="red">div容器</div>
+<div class="red">div容器</div>
+<div>div容器</div>
+<div id="div1">div容器</div>
+<p>段落</p>
+<p id="p1">段落</p>
+<p class="red size40">段落</p>
+<p>段落</p>
+<div><span>span</span></div>
+<ul>
+	<li class="li1">列表</li>
+	<li>列表</li>
+	<li class="li1">列表</li>
+	<li>列表</li>
+	<li class="li1">列表</li>
+</ul>
+
+<div>
+	<p>我是div里面的p<span>我是div的后代span</span></p>
+	<p>我是div里面的p</p>
+</div>
+
+<a href="http://www.sifangku.com" target="_blank">网站</a>
+</body>
+</html>
+
+
+用CSS 给网页装潢[3] -构造文本
+1）文本缩进 text-indent:10px;10%
+2）文本对齐 text-align:left,center,right;
+3）文本行高 line-height:23px,10%;
+4）字间隔(单词) word-spacing:10px;
+5）字母间隔  letter-spacing:3px;
+6）文字下划线 text-decoration:underline,none;
+7）字体 font-family:"Times New Roman",Georgia,Serif;
+8）字体风格 font-style:normal,italic;
+9）字体大小 font-size:20px;
+10）文本颜色 color:red,#111111;
+11）文本加粗 font-weight:bold,normal;
+12）关于样式继承 ...
+本课导语：
+CSS 对文本的处理特别方便，这一节课我们就来学习一下css 常用的对文本的设
+置操作！
+CSS 长度值得单位：
+%——百分比
+in——寸
+cm——厘米
+mm——毫米
+pt——point，大约1/72 寸；
+pc——pica，大约6pt，1/6 寸；
+px——屏幕的一个像素点；
+em——元素的font-size；
+1. 文本缩进
+text-indent：值；
+值为数字，最常用的数值单位是px(像素)，也可以直接是百分比！
+text-indent:100px;
+text-indent:10%;
+2. 文本对齐
+text-align:对其方式;
+可以的值为：left、center、right
+3. 文本行高
+line-height:值;
+line-height:23px;
+line-height:120%;
+默认：normal
+4. 字间隔(单词)
+word-spacing:10px;
+默认值：normal
+5. 字母间隔
+letter-spacing:5px;
+默认值：normal
+6. 文字下划线
+text-decoration:none;
+值：underline 或者none 等，常用值就这两个
+7. 字体
+font-family:微软雅黑;
+多个字体用逗号隔开
+font-family:"Times New Roman",Georgia,Serif;
+font-family:字体1,字体2;
+8. 字体风格
+font-style:值;
+normal
+italic
+oblique
+9. 字体大小
+font-size:数值;
+数值单位为px
+10. 文本颜色
+color:颜色值;
+颜色值可以为一些简单的英语单词
+color:red;
+实际工作中用的比较多的是颜色代码
+color:#111111;
+11. 文本加粗
+font-weight:值;
+常用值：
+normal
+bold
+12. 关于样式继承
+样式的继承问题！
+
+
+第四章用CSS 给网页装潢[4] -构造块级元素
+外引用：
+<link rel=”stylesheet” type=“text/css” href=”./style/demo.css”>
+#p1{
+background:gray url(../images/2.jpg) center fixed;  /*--引用图片的时候url不能掉--*/
+/*background:背景颜色 图片地址 图片是否平铺（repeat） 水平偏移 垂直偏移*/
+color:red;
+width:100%;
+height:500px;
+20px solid red;
+}
+p#p2:hover{  /*--注意hover的写法--*/
+color:blue;
+font-size:10px;
+
+}
+#div1{
+border-left:20px solid red;
+border-right:10px dotted green;
+border-bottom:5px dotted green;
+border-top:5px dashed blue;
+ /*border的值由像素 实虚 颜色构成*/
+}
+
+后代元素长度大于祖辈元素的大小时候的处理方法：
+overflow:;
+可能的值：
+visible：默认，内容不会被修剪，会呈现在元素框之外。
+hidden：超出的内容会被修剪掉，直接不现实。
+scroll：超出内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+auto：如果内容被超出，则浏览器会显示滚动条以便查看其余的内容。
+inherit：规定应该从父元素继承overflow 属性的值。
+
+元素性质相互转化：
+display:block;  /*内联元素转化成块级元素*/
+display:inline; /*块级元素转化成内联元素*/
+display:inline-block;  /*还是以块级元素显示，但是是显示在一行里面，需要显示在一行的块级元素都要添加display:inline-block;属性*/
+display:none;  /*不显示*/
+
+
+
+
+
+
+
+
+
+
+第四章用CSS 给网页装潢[5] -盒模型概念
+
+
+
+注意顺序：
+padding/border/margin:上右下左，不是上右左下,逆时针的。
+
+浮动的设置方法：
+float:left;
+float:right;
+6）我不想标准流中的元素受到浮动的影响怎么办？
+clear:both;
+none:默认值。允许两边都可以有浮动对象
+left:不允许左边有浮动对象
+right:不允许右边有浮动对象
+both:不允许有浮动对象
+结论：被设置浮动的元素会组成一个流，并且会横着紧挨着排队，直到父元素的
+宽度不够才会换一行排列。
+
+
+第四章用CSS 给网页装潢[7] -相对定位与绝对定位
+1.相对定位
+position:relative;
+left:;
+right:;
+top:;
+bottom:;
+为元素设置相对定位之后，元素依然会占据原来的空间，依然在标准流中！
+2.绝对定位
+position:absolute;
+left:;
+right:;
+top:;
+bottom:;
+为元素设置绝对定位之后，元素不会占据原来的空间，脱离了原来的队伍！
+3.固定定位
+position:fixed;
+left:;
+right:;
+top:;
+bottom:;
+相对于浏览器的窗口进行定位
+4.重叠元素的堆叠顺序设置
+使用z-index:;对设置了相对或绝对或固定定位的元素进行堆叠顺序的设置，设置的数值越
+大即堆叠在越上层，该属性可以是负值。不设置position元素属性的无效！
+
+第四章用CSS 给网页装潢[8] -构造列表
+
+<!DOCTYPE html>
+<html lang="cn-zh">
+<head>
+<meta charset="utf-8"/>
+<title>第四章用CSS 给网页装潢[8] -构造列表</title>
+<style type="text/css">
+li {
+	height:31px;
+	line-height:31px;  /*li的行高和文字的行高设置成一样，可以将文字居中显示*/
+	font-family:微软雅黑;
+	font-size:14px;
+	color:#3c3c3c;
+	border-bottom:1px solid #dedede;
+	text-indent:35px;
+	
+}
+#list_1{
+	margin:0px 0px;
+	padding:0px 20px;
+	background:#F8F8F8;
+	width:130px;
+	border:1px solid #BBBBBB;
+}
+#list1 {
+	background:url(images/icon_1.png)0px center no-repeat;
+}
+#list2 {
+	background:url(images/icon_2.png)0px center no-repeat;
+}
+#list3 {
+	background:url(images/icon_3.png)0px center no-repeat;
+}
+#list4 {
+	background:url(images/icon_4.png)0px center no-repeat;
+}
+#list5 {
+	background:url(images/icon_5.png)0px center no-repeat;
+}
+#list6 {
+	background:url(images/icon_6.png)0px center no-repeat;
+}
+div ul#list_1 li a {   /*这里注意上下级定位，不能直接写div#list_1,因为没有给div命名id,这个#list_1是下面的ul的*/
+text-decoration:none;
+}
+div ul#list_1 li a:hover {
+text-decoration:underline;
+font-size:15px;
+color:red;
+}
+</style>
+</head>
+<body>
+<div >
+	<ul id="list_1" type="none">
+		<li id="list1"> <a href="http://www.sifangku.com" target="_blank">服装内衣</a></li>
+		<li id="list2"> <a href="http://www.sifangku.com" target="_blank">鞋包配饰</a></li>
+		<li id="list3"> <a href="http://www.sifangku.com" target="_blank">运动户外</a></li>
+		<li id="list4"> <a href="http://www.sifangku.com" target="_blank">珠宝手表</a></li>
+		<li id="list5"> <a href="http://www.sifangku.com" target="_blank">手机数码</a></li>
+		<li id="list6"> <a href="http://www.sifangku.com" target="_blank">家电办公</a></li>
+	</ul>
+</div>
+</body>
+</html>
+
+
+第四章用CSS 给网页装潢[9] -布局初探
+
+进行缩放后才发现，因为宽度是设置的百分比，不能缩放，所以以后还是设置好具体的像素，这样能缩放。
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>第四章用CSS 给网页装潢[9] -布局初探</title>
+<style type="text/css">
+body {
+margin:0px;
+padding:0px;
+}
+#head {
+	width:80%;
+	height:100px;
+	background:#47B77F;
+	position:relative;
+	left:10%;
+	
+}
+#main-left {
+	width:60%;
+	height:700px;
+	background:#8BD1D9;
+	position:relative;
+	left:10%;
+}
+#main-right {
+	width:20%;
+	height:700px;
+	background:#FF3366;
+	position:absolute;
+	left:70%;
+	top:100px;
+}
+#bottom {
+	width:80%;
+	height:100px;
+	background:#47B77F;
+	position:relative;
+	left:10%;
+}
+#main-left-1 {
+width:50%;
+height:50%;
+background:#FF6666;
+position:relative;/*为元素设置相对定位之后，元素依然会占据原来的空间，依然在标准流中！*/
+
+}
+#main-left-2 {
+width:50%;
+height:50%;
+background:#663399;
+position:absolute;/*为元素设置绝对定位之后，元素不会占据原来的空间，脱离了原来的队伍！*/
+left:50%;
+top:0px;
+}
+#main-left-3 {
+width:50%;
+height:50%;
+background:#FF6600;
+position:absolute;
+left:50%;
+top:50%; 
+}
+#main-left-4 {
+width:50%;
+height:50%;
+background:#00CC00;
+position:relative;
+left:0%;
+top:0%;  /* 注：如果这里写top:50%的话，这个元素就会跑到下面去，因为他的父元素是#main-left*/
+}
+</style>
+</head>
+<body>
+	<div id="head">
+	头部
+	</div>
+	<div id="main-left">
+		<div id="main-left-1">
+		左上
+		</div>
+		<div id="main-left-2">
+		右上
+		</div><div id="main-left-3">
+		右下
+		</div><div id="main-left-4">
+		左下
+		</div>
+	主体左边
+	</div>
+	<div id="main-right">
+	主体右边
+	</div>
+	<div id="bottom">
+	底部
+	</div>
+</body>
+</html>
+
+
+以下是设置成px后的代码
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>第四章用CSS 给网页装潢[9] -布局初探</title>
+<style type="text/css">
+body {
+margin:0px;
+padding:0px;
+}
+#head {
+	width:1000px;
+	height:100px;
+	background:#47B77F;
+	margin:0px auto 10px auto;	
+}
+#main {
+width:1000px;
+margin:0px auto; /*这里要设置一个main的宽度才能正常居中*/
+}
+#main-left {
+	width:790px;
+	height:700px;
+	background:#8BD1D9;
+	float:left;
+	margin-bottom:10px;  
+}
+#main-right {
+	width:200px;
+	height:700px;
+	background:#FF3366;
+	float:left; /*main-left设置成了左浮动，这个再设置左浮动会自动跑到右边*/
+	margin:0px 0px 10px 10px;
+}
+#bottom {
+	width:1000px;
+	height:100px;
+	background:#47B77F;
+	margin:0px auto; /*因为上面的main-left和main-right浮动的关系，这里不能设置margin-top:10px; 需要在上面去设置往下挤出10px*/
+	clear:both;
+}
+#main-left-1 {
+	width:395px;
+	height:350px;
+	background:red;
+	float:left;
+
+}
+#main-left-2 {
+	width:395px;
+	height:350px;
+	background:orange;
+	float:left;
+}
+#main-left-3 {
+	width:395px;
+	height:350px;
+	background:blue;
+	float:left;
+}
+#main-left-4 {
+	width:395px;
+	height:350px;
+	background:yellow;
+	float:left;
+}
+</style>
+</head>
+<body>
+	<div id="head">
+	头部
+	</div>
+<div id="main">
+	<div id="main-left">
+		<div id="main-left-1">
+		左1
+		</div>
+		<div id="main-left-2">
+		左2
+		</div>
+		<div id="main-left-3">
+		左3
+		</div>
+		<div id="main-left-4">
+		左4
+		</div>
+	</div>
+	<div id="main-right">
+	主体右边
+	</div>
+</div>
+<div id="bottom">
+	底部
+</div>
+</body>
+</html>
+
+
+18.项目实战1 -美站库[1]
+将html初始化，css部分里面这样写：（红色字体部分）
+
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,textarea,p {
+	margin:0px;
+	padding:0px;
+	font-size:13px;
+}
+ul {
+	list-style:none;
+}
+img,a img {
+	border:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+#header {
+	height:452px;
+	background:url(top_bg.jpg) repeat-x; color:red;
+}
+#main {
+	
+	background:url(main_top_bg.jpg) repeat-x; color:red; /*注意这里不能给#main加高度属性,不然会将main整个限定*/
+}
+#main1 {
+	
+	background:url(main1_bottom_bg.jpg) 0px bottom repeat-x; color:red;  /*注意backgroubd的属性值一个分号*/
+	
+}
+#footer {
+	height:100px;
+	background:url(footer_bg.jpg) repeat-x; color:red;
+}
+
+
+HTML部分：
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>美站库 炫美网站大全</title>
+<link rel="stylesheet" type="text/css" href="images/test.css" />
+</head>
+<body>
+	<div id="header">
+	头部
+	</div>
+
+	<div id="main">
+	主体上
+		<div id="main1">
+			<div style="height:600px;">主体下</div>
+		</div>
+	</div>
+
+	<div id="footer">
+	足部
+	</div>
+</body>
+</html>
+
+
+CSS 多类选择器
+<p class="important warning">
+This paragraph is a very important warning.
+</p>
+
+class 为 important 的所有元素都是粗体，而 class 为 warning 的所有元素为斜体，class 中同时包含 important 和 warning 的所有元素还有一个银色的背景
+
+.important {font-weight:bold;} 
+.warning {font-style:italic;}
+.important.warning {background:silver;}
+
+
+
